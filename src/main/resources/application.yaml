@@ -1,0 +1,58 @@
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    urls:
+      - name: User Service
+        url: http://localhost:8081/v3/api-docs
+      - name: Order Service
+        url: http://localhost:8080/v3/api-docs
+
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.netty.http.client: DEBUG
+
+server:
+  port: 5050
+  error:
+    whitelabel:
+      enabled: true
+  tomcat:
+    accesslog:
+      enabled: true
+      pattern: "%h %l %u %t \"%r\" %s %b"
+      directory: logs
+      prefix: access_log
+      suffix: .txt
+
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+      server:
+        webmvc:
+          routes:
+            - id: users-service
+              uri: http://localhost:8080
+              predicates:
+                - Path=/users/**
+
+
+
