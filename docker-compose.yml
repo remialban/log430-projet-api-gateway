@@ -14,9 +14,21 @@ services:
     networks:
       - usernet
 
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus-api-gateway
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+
+
 networks:
   usernet:
     driver: bridge
 
 volumes:
   postgres_data:
+  prometheus_data:
+

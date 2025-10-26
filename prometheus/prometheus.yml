@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 5s   # fréquence de collecte (toutes les 5 secondes)
+
+scrape_configs:
+  - job_name: 'api-gateway'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['DELL-ALBAN:5050']   # "gateway" = nom du conteneur Docker
