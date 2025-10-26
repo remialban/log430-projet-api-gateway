@@ -4,6 +4,8 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     urls:
+      - name: Api Gateway
+        url: /v3/api-docs
       - name: User Service
         url: http://localhost:8081/v3/api-docs
       - name: Order Service
@@ -53,6 +55,12 @@ spring:
               uri: http://localhost:8080
               predicates:
                 - Path=/users/**
+                - Method=GET,POST,PUT,DELETE
+            - id: transactions-service
+              uri: http://localhost:8081
+              predicates:
+                - Path=/orders/**
+                - Method=GET,POST,PUT,DELETE
 
 
 
