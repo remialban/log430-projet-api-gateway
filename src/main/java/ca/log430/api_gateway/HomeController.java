@@ -21,9 +21,9 @@ public class HomeController {
         Map<String, String> result = new HashMap<>();
 
 
-        result.put("users", checkUrl("http://172.17.0.1:8080"));
-        result.put("transactions", checkUrl("http://172.17.0.1:8081"));
-        result.put("payments", checkUrl("http://172.17.0.1:8083"));
+        result.put("users", checkUrl("http://172.17.0.1:8080/swagger-ui/index.html"));
+        result.put("transactions", checkUrl("http://172.17.0.1:8081/swagger-ui/index.html"));
+        result.put("payments", checkUrl("http://172.17.0.1:8083/swagger-ui/index.html"));
 
         return result;
     }
