@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "dce53b91-3954-4c37-a56f-f7ed841b93b2",
+		"name": "API GATEWAY Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16443933"
+	},
+	"item": [
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "/orders?userId=:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{url}}:5050/orders?userId=1",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "5050",
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders?userId=:id Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{url}}:5050/orders/1",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "5050",
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders?userId=:id Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"ACHAT\",\n  \"userId\": 0,\n  \"amount\": 0,\n  \"finished\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{url}}:5050/orders",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "5050",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders?userId=:id Copy 2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"ACHAT\",\n  \"userId\": 0,\n  \"amount\": 0,\n  \"finished\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{url}}:5050/orders",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "5050",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "approvisionnements",
+			"item": [
+				{
+					"name": "/approvisionnements?userId=:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{url}}:5050/orders?userId=1",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "5050",
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/approvisionnements?userId=:id Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{url}}:5050/orders/1",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "5050",
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/approvisionnements?userId=:id Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"ACHAT\",\n  \"userId\": 0,\n  \"amount\": 0,\n  \"finished\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{url}}:5050/orders",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "5050",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "/users/:id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://fr.openfoodfacts.org/cgi/search.pl?search_terms=Crème de marron casino&search_simple=1&action=process&json=true",
+							"protocol": "https",
+							"host": [
+								"fr",
+								"openfoodfacts",
+								"org"
+							],
+							"path": [
+								"cgi",
+								"search.pl"
+							],
+							"query": [
+								{
+									"key": "search_terms",
+									"value": "Crème de marron casino"
+								},
+								{
+									"key": "search_simple",
+									"value": "1"
+								},
+								{
+									"key": "action",
+									"value": "process"
+								},
+								{
+									"key": "json",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/auth (login)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"remi@remi.fr\",\n    \"password\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{url}}:8080/users/auth",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 0,\n  \"email\": \"string\",\n  \"hashedPassword\": \"string\",\n  \"name\": \"string\",\n  \"address\": \"string\",\n  \"birthDate\": \"2025-10-26\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{url}}:5050/users",
+							"protocol": "http",
+							"host": [
+								"{{url}}"
+							],
+							"port": "5050",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "url",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "bearer_token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
