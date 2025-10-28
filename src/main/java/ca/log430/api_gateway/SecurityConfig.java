@@ -28,6 +28,10 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         auth -> auth
                                 .requestMatchers("/actuator/**").permitAll()
+                                .requestMatchers("/swagger-ui.html").permitAll()
+                                .requestMatchers("/v3/**").permitAll()
+                                .requestMatchers("/v2/api-docs").permitAll()
+                                .requestMatchers("/swagger-ui/**").permitAll()
                                 .requestMatchers("/users/auth").permitAll()
                                 .requestMatchers("/users/auth/check").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/users").permitAll()

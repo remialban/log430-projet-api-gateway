@@ -49,7 +49,7 @@ public class Authentification extends OncePerRequestFilter {
         // make get http request :
 
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://localhost:8080/users/auth/check?token=" + tokenValue;
+        String url = "http://172.17.0.1:8080/users/auth/check?token=" + tokenValue;
         System.out.println("Token: " + tokenValue);
         ResponseEntity<HashMap> response1 = restTemplate.getForEntity(url, HashMap.class);
         if (response1.getStatusCode().is2xxSuccessful()) {

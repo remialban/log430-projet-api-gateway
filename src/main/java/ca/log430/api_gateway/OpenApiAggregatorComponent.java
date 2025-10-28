@@ -14,8 +14,9 @@ public class OpenApiAggregatorComponent {
 
     private final RestTemplate restTemplate = new RestTemplate();
     private final List<String> serviceDocs = List.of(
-            "http://localhost:8080/v3/api-docs",
-            "http://localhost:8081/v3/api-docs"
+            "http://172.17.0.1:8080/v3/api-docs",
+            "http://172.17.0.1:8081/v3/api-docs",
+            "http://172.17.0.1:8082/v3/api-docs"
     );
 
     @GetMapping("/v3/api-docs")
@@ -45,12 +46,12 @@ public class OpenApiAggregatorComponent {
             }
 
             // dynamique : changer servers si Swagger UI passe par la Gateway
-            if (viaGateway) {
+            /*if (viaGateway) {
                 merged.put("servers", List.of(Map.of("url", "http://localhost:5050")));
             } else {
                 // garder le serveur original du microservice
                 merged.put("servers", doc.getOrDefault("servers", List.of(Map.of("url", url.replace("/v3/api-docs","")))));
-            }
+            }*/
         }
 
         merged.put("paths", allPaths);
