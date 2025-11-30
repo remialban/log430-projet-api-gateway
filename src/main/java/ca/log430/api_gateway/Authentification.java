@@ -30,7 +30,7 @@ public class Authentification extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         System.out.println("bypass auth");
 
-        if (request.getRequestURI().startsWith("/users/auth") || request.getRequestURI().equals("/users")) {
+        if (request.getRequestURI().startsWith("/users/auth") || request.getRequestURI().equals("/users") || request.getRequestURI().startsWith("/users/validate")) {
             filterChain.doFilter(request, response);
             System.out.println("bypass auth");
             return;
