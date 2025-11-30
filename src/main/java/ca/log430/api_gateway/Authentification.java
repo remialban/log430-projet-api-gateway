@@ -28,15 +28,12 @@ public class Authentification extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        System.out.println("bypass auth");
 
         if (request.getRequestURI().startsWith("/users/auth") || request.getRequestURI().equals("/users") || request.getRequestURI().startsWith("/users/validate")) {
             filterChain.doFilter(request, response);
             System.out.println("bypass auth");
             return;
         }
-        System.out.println("doFilterInternal");
-        // Get bearer token from Authorization header
         String authorizationHeader = request.getHeader("Authorization");
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
             filterChain.doFilter(request, response);
@@ -44,12 +41,8 @@ public class Authentification extends OncePerRequestFilter {
         }
         String tokenValue = authorizationHeader.substring(7);
 
-        // Usin io.json web token library to validate token now validate :
-        // check if token is valid
-        // make get http request :
-
         RestTemplate restTemplate = new RestTemplate();
-        String url = "http://172.17.0.1:8080/users/auth/check?token=" + tokenValue;
+        String url = "http://users-service:8080/users/auth/check?token=" + tokenValue;
         System.out.println("Token: " + tokenValue);
         ResponseEntity<HashMap> response1 = restTemplate.getForEntity(url, HashMap.class);
         if (response1.getStatusCode().is2xxSuccessful()) {
