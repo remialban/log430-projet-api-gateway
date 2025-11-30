@@ -1,10 +1,17 @@
 #!/bin/bash
 # Liste des dépôts à traiter
 # Format : "nom_dossier url_du_repo"
+
+export DATABASE_NAME=postgres
+export DATABASE_USERNAME=postgres
+export DATABASE_PASSWORD=postgres
+
 repos=(
-  "projet1 https://github.com/remialban/log430-projet-api-gateway"
-  "projet2 https://github.com/remialban/log430-orojet-transactions"
-  "projet3 https://github.com/remialban/log430-projet-users"
+  "api-gateway https://github.com/remialban/log430-projet-api-gateway"
+  "users-services https://github.com/remialban/log430-projet-users"
+  "transactions-service https://github.com/remialban/log430-orojet-transactions"
+  "email-service https://github.com/remialban/log430-labo7-emails"
+  "payments-service https://github.com/remialban/log430-projet-payments"
 )
 
 # Dossier racine où les dépôts seront placés
@@ -43,7 +50,7 @@ for entry in "${repos[@]}"; do
     echo "Aucun docker-compose.yml trouvé dans $folder."
   fi
   cd "$base_dir" || exit 1
-
+  cd "../"
   echo "=== Terminé pour $folder ==="
   echo
 done
