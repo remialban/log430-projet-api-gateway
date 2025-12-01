@@ -70,17 +70,17 @@ spring:
         webmvc:
           routes:
             - id: users-service
-              uri: http://172.17.0.1:8080
+              uri: http://users-service:8080
               predicates:
                 - Path=/users/**
                 - Method=GET,POST,PUT,DELETE
             - id: transaction-service
-              uri: http://172.17.0.1:8081
+              uri: http://transactions-service:8081
               predicates:
                 - Path=/orders/**
                 - Method=GET,POST,PUT,DELETE
             - id: payment-service
-              uri: http://172.17.0.1:8082
+              uri: http://payments-service:8082
               predicates:
                 - Path=/approvisionnements/**
                 - Method=GET,POST,PUT,DELETE
